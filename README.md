@@ -1,2 +1,4 @@
 # XING_CSS
-Eleganter Style für XING, ladbar über Stylus.
+Eleganter Stil für XING, ladbar über Stylus.
+
+![Preview](http://www.thorsten-willert.de//images/xing.png)
