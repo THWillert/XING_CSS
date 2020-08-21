@@ -2,6 +2,43 @@
     background-color: transparent !important;
 }
 
+@media print {
+
+    * {
+    color: #000 !important;
+    background-color: #fff !important;
+    }
+    
+    nav,
+    .XingView-XingView-sidebar-ad222b3a,
+    .ImproveVisibility-ImproveVisibility-wrapper-e1018fde,
+    .flyout-button-flyout-button-body-44744b4a, 
+    .flyout-button-flyout-button-wrapper-8885493f {
+    visibility: hidden;
+    background-color: transparent !important;
+    }   
+    
+/* Besuscher Statistik */
+    div.show-more-ShowMore-collapsable-6502bf5c:nth-child(2) > div:nth-child(5) > div:nth-child(1),
+    .styles-grid-col-2554aa7b,
+    .styles-grid-c-12-59417792,
+    .Header-Header-heading-9de5a6a4
+    {
+       page-break-before: always; 
+    }       
+    .styles-container-gridContainer-1a6b8974,
+    .styles-container-standardGridContainer-09281107 {
+        width: 100%;
+        max-width: 100%;
+        margin: 0px;
+        padding: 0px;
+    }  
+    .chart {
+        width:100% !important;
+    }
+    
+}
+
 body,
 main,
 footer,
@@ -15,7 +52,7 @@ div[class^="SearchBarXdl-SearchBar-suggestions-"],
     font-family: sans-serif !important;
 }
 
-/* Etwas hˆflicher ######################################################################## */
+/* Etwas h√∂flicher ######################################################################## */
 #people > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1),
 #from_user > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1){
      visibility: hidden;
@@ -33,7 +70,7 @@ div[class^="SearchBarXdl-SearchBar-suggestions-"],
     position: absolute;
     top: 0;
     left: 0;
-    content: "Ihre Beitr‰ge";
+    content: "Ihre Beitr√§ge";
 }
 /* ########################################################################################## */
 .text,
@@ -65,7 +102,8 @@ div[class^="card-CardShell-card"],
 div[class^="recommendation-list-recommendation-list-posting"],
 div[class^="recent-search-recent-search-container"],
 div[class^="main-main-main-"],
-div[class*="SpokeHeader-SpokeHeader-container-"]
+div[class*="SpokeHeader-SpokeHeader-container-"],
+div[class^="src-ModalWindow-base-"]
 {
     background-color: white !important;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1) !important;
@@ -124,12 +162,12 @@ header .IconWithBadge-IconWithBadge-icon-ca5a6beb {
 
 /* button reset ============================================================= */
 button {
-
+  
     border: 1px solid gray !important;
     border-radius: 3px !important;
     background-color: #eee !important;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-
+   
 }
 
 button:hover {
@@ -141,7 +179,7 @@ button:hover {
      color: black !important;
     border-radius: 4px;
 background: linear-gradient(145deg, #ffffff, #e6e6e6);
-box-shadow:  8px 8px 16px #d9d9d9,
+box-shadow:  8px 8px 16px #d9d9d9, 
              -8px -8px 16px #ffffff;
 */
 
