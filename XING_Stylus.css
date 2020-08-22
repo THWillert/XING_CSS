@@ -95,6 +95,10 @@ div[class^="Startpage-Startpage-topBlock-"] {
 }
 
 .component-layout-card,
+.lightbox-handle,
+.comm-navigation-dropdown,
+.dropdown,
+#new-post-form,
 nav[class^="VerticalNavigation-VerticalNavigation-nav-"],
 nav[class^="Startpage-Startpage-navBar-"],
 div[class^="Card-Card-card-dd"],
