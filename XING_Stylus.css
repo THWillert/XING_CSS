@@ -1,7 +1,303 @@
-* {
-    background-color: transparent !important;
+@-moz-document domain("xing.com") {
+/* V0.2:
+Zur einfachen Anpassung:
+- auf CSS-Variablen umgestellt
+- für Stylus die CSS in die Bereiche:
+  - Variablen
+  - Stile
+  - Print
+  aufgeteilt
+
+*/
+
+:root {
+    --reset-bg: transparent; /* reset für alles */
+    
+    --border-radius: 0.3em
+    
+
+    /* header */
+    --header-bg:  #18242B ;
+    --header-text: #fff;
+    
+    /* alles andere */
+    --text-color: #777;
+    --bg-color: #F4F5F5;
+        
+    --card-color: white;
+    --border-color: rgba(0, 0, 0, 0.1);
+    
+    --nav-hover-bg: #B0D400;       
+    --nav-hober-text: #006567;
+    
+    /* badges */
+    --badge-bg: #006567;
+    --badge-border: #B0D400;
+    
+    /* messages */
+        /* list header */
+        --message-list-header: #006567;
+    
+        /* eigene Nachricht */
+        --message-send-color: #006567;
+        /* empfangene Nachricht */
+        --message-rcv-color: #fff;  
+
+        /* footer */
+        --message-footer-bg: #fff;
+    
+    
+    /* formulare */
+    --input-color: rgba(255, 255, 255, 0.9);
+    --input-radius:  0.3em;
+    
+    --button-border: rgba(0, 0, 0, 0.2);;
+    --button-radius: 0.3em;
+    --button-bg: #eee;
+    --button-hover-bg: #ddd;
+    
+    /* basic, premium usw. */
+    --flag-text: #000;
+    --flag-color: linear-gradient(-45deg, #fceabb 0%,#fccd4d 44%,#f8b500 51%,#fbdf93 100%)
+}
 }
 
+@-moz-document domain("xing.com") {
+/* zu viele Bereiche sind einzeln eingefärbt, deshalb alle auf transparent setzen */
+* {
+    background-color: var(--reset-bg) !important;
+}
+
+
+body,
+main,
+footer,
+.foundation-root.container,
+div[class^="skins-shell-wrapper-"],
+div[class^="SearchBarXdl-SearchBar-suggestions-"],
+.SettingsDropdownList-SettingsDropdownList-itemList-3dafcb00,
+.src-ModalContent-base-9d0ba1a7{
+    color: var(--text-color) !important;
+    background-color: var(--bg-color) !important;
+    font-family: sans-serif !important;
+}
+
+/* Etwas höflicher ######################################################################## */
+#people > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1),
+#from_user > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1){
+     visibility: hidden;
+    position: relative;
+}
+#people > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1):after {
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "Von Ihren Kontakten";
+}
+#from_user > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1):after  {
+      visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "Ihre Beiträge";
+}
+/* ########################################################################################## */
+.text,
+input {
+
+    background-color: var(--input-color) !important;
+}
+
+
+header {
+    color: var(--header-text) !important;
+    background-color: var(--header-bg) !important;
+    font-family: sans-serif !important;
+}
+
+div.styles-grid-row-d520b127:nth-child(1) {
+    border: 0px !important;
+}
+
+div[class^="Startpage-Startpage-topBlock-"] {
+    border-color: transparent !important;
+}
+
+.malt-grid-index-c-12-5b9e8c8c > div:nth-child(2),
+div.Tile-Tile-tile-5fa1157e,
+.component-layout-card,
+.lightbox-handle,
+.comm-navigation-dropdown,
+.dropdown,
+#new-post-form,
+nav[class^="VerticalNavigation-VerticalNavigation-nav-"],
+nav[class^="Startpage-Startpage-navBar-"],
+div[class^="Card-Card-card-dd"],
+div[class^="card-CardShell-card"],
+div[class^="recommendation-list-recommendation-list-posting"],
+div[class^="recent-search-recent-search-container"],
+div[class^="main-main-main-"],
+div[class*="SpokeHeader-SpokeHeader-container-"],
+div[class^="src-ModalWindow-base-"]
+{
+    background-color: var(--card-color) !important;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1) !important;
+    border-radius: var(--border-radius);
+    padding: 1em;
+    border: solid 1px var(--border-color) !important;
+}
+
+
+div[class^="entryOverview-entryOverview-button-"],
+.presentational-chat-list-list-fe9022c5 {
+    background-color: white !important;
+    border: 0px !important;
+}
+
+
+div[class^="entryOverview-entryOverview-wrapperForS-"] {
+    margin-bottom: 1em
+}
+
+.CardGrid-CardGrid-card-f4151da6 {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+
+nav[class^="VerticalNavigation-VerticalNavigation-nav-"] {
+    margin: 1em !important;
+    padding: 1em !important;
+}
+
+a[class^="NavItem-NavItem-link-"] {
+    border-radius: var(--border-radius);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+a[class^="NavItem-NavItem-link-"]:hover {
+    color: var(--nav-hober-text);
+    background-color: var(--nav-hover-bg) !important;
+    border-radius:var(--border-radius);
+}
+flag-premium-flag-0ab5780a
+
+.klartext-archive__item {
+    margin: 1em;
+}
+
+/* Nachricht schreiben - iframe ============================================= */
+.flyout-button-flyout-button-body-44744b4a {
+    background-color: rgba(0,0,0,0) !important;
+}
+
+
+/* buttons  ============================================================= */
+button {
+    border: 1px solid var(--button-border) !important;
+    border-radius: var(--button-radius) !important;
+    background-color: var(--button-bg) !important;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s 
+   
+}
+
+button:hover {
+    background-color: var(--button-hover-bg) !important;
+}
+
+
+
+/* premium */
+.displayFlag-displayFlag-clickableBadge-f36380a7,
+.PremiumPopOver-PremiumPopOver-wrapper-b2b9c835 > button:nth-child(1) {
+    background: var(--flag-color); 
+}
+
+.flag-FlagShell-text-a676758e,
+.typography-TextShell-text-a647b5ac,
+.PremiumPopOver-PremiumPopOver-wrapper-b2b9c835 > button:nth-child(1) {
+     color: var(--flag-text) !important;
+}
+
+/* cookie =================================================================== */
+.cookie-consent-CookieConsent-container-0bbad4c7 {
+    color: white;
+    background-color: #006567 !important;
+}
+
+/* suchleiste =============================================================== */
+input {
+    border-radius: var(--input-radius) !important;
+}
+button[class^="SearchInput-SearchInput-button-"] {
+    left: 0px !important;
+}
+button[class^="button-ButtonShell-button-"] {
+    height: 42px !important;
+    border: 0px !important;
+}
+
+
+span[class^="badge-BadgeShell-badge"],
+span[class^="IconWithBadge-IconWithBadge-notification"],
+span[class^="skins-notificationCount-badge-"],
+span[class^="skins-small-badge-"]
+{
+    background-color: var(--badge-bg) !important;
+    border: 1px solid var(--badge-border) !important;
+}
+/* chat ===================================================================== */
+.message-bubble-message-bubble-bubble-2d9feb37 {
+    background-color: var(--message-rcv-color) !important;
+}
+.message-bubble-message-bubble-currentUser-44aeb208 {
+    background-color: var(--message-send-color) !important;
+}
+
+.presentational-chat-footer-footer-ec5d1933 {
+	background-color: var(--message-footer-bg) !important;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+}
+
+
+
+.presentational-chat-list-item-header-5d583be2 {
+    background-color: var(--message-list-header) !important;
+    padding: 0.2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 0.2em;
+    margin-bottom: 1em;
+}
+.presentational-chat-list-item-datetime-87eacb65 {
+    color: white !important;
+}
+
+.presentational-chat-footer-composer-7a7aaaed {
+    border-radius: var(--border-radius);
+    border: 1px solid silver;
+}
+
+.presentational-chat-content-emojiPicker-4361228d {
+    background-color: white !important;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+}
+
+/* events */
+.benefits-box-plus {
+    background-color: rgba(255,255,255,0.9) !important;
+    border-radius: var(--border-radius)
+}
+.benefit-header  {
+    background-color:  #006567  !important;
+    border-radius: var(--border-radius)
+}
+
+
+}
+
+@-moz-document domain("xing.com") {
 @media print {
 
     * {
@@ -38,227 +334,4 @@
     }
     
 }
-
-body,
-main,
-footer,
-.foundation-root.container,
-div[class^="skins-shell-wrapper-"],
-div[class^="SearchBarXdl-SearchBar-suggestions-"],
-.SettingsDropdownList-SettingsDropdownList-itemList-3dafcb00,
-.src-ModalContent-base-9d0ba1a7{
-    color: #777 !important;
-    background-color: #F4F5F5 !important;
-    font-family: sans-serif !important;
 }
-
-/* Etwas höflicher ######################################################################## */
-#people > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1),
-#from_user > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1){
-     visibility: hidden;
-    position: relative;
-}
-#people > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1):after {
-    visibility: visible;
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: "Von Ihren Kontakten";
-}
-#from_user > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1):after  {
-      visibility: visible;
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: "Ihre Beiträge";
-}
-/* ########################################################################################## */
-.text,
-input {
-
-    background-color: rgba(255, 255, 255, 0.9) !important;
-}
-
-
-header {
-    color: white !important;
-    background-color: #18242B !important;
-    font-family: sans-serif !important;
-}
-
-div.styles-grid-row-d520b127:nth-child(1) {
-    border: 0px !important;
-}
-
-div[class^="Startpage-Startpage-topBlock-"] {
-    border-color: transparent !important;
-}
-
-.component-layout-card,
-.lightbox-handle,
-.comm-navigation-dropdown,
-.dropdown,
-#new-post-form,
-nav[class^="VerticalNavigation-VerticalNavigation-nav-"],
-nav[class^="Startpage-Startpage-navBar-"],
-div[class^="Card-Card-card-dd"],
-div[class^="card-CardShell-card"],
-div[class^="recommendation-list-recommendation-list-posting"],
-div[class^="recent-search-recent-search-container"],
-div[class^="main-main-main-"],
-div[class*="SpokeHeader-SpokeHeader-container-"],
-div[class^="src-ModalWindow-base-"]
-{
-    background-color: white !important;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1) !important;
-    border-radius: 0.5em;
-    padding: 1em;
-    border: solid 1px silver !important;
-}
-
-div[class^="entryOverview-entryOverview-button-"],
-.presentational-chat-list-list-fe9022c5 {
-    background-color: white !important;
-    border: 0px !important;
-}
-
-
-div[class^="entryOverview-entryOverview-wrapperForS-"] {
-    margin-bottom: 1em
-}
-
-.CardGrid-CardGrid-card-f4151da6 {
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
-}
-
-
-nav[class^="VerticalNavigation-VerticalNavigation-nav-"] {
-    margin: 1em !important;
-    padding: 1em !important;
-}
-
-a[class^="NavItem-NavItem-link-"] {
-    border-radius: 0.5em;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-a[class^="NavItem-NavItem-link-"]:hover {
-    color: #006567;
-    background-color: #B0D400 !important;
-    border-radius: 0.5em;
-}
-flag-premium-flag-0ab5780a
-
-.klartext-archive__item {
-    margin: 1em;
-}
-
-/* Nachricht schreiben - iframe ============================================= */
-.flyout-button-flyout-button-body-44744b4a {
-    background-color: rgba(0,0,0,0) !important;
-}
-
-/* badge header
-header .IconWithBadge-IconWithBadge-icon-ca5a6beb {
-    filter: invert();
-} */
-
-/* button reset ============================================================= */
-button {
-  
-    border: 1px solid gray !important;
-    border-radius: 3px !important;
-    background-color: #eee !important;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-   
-}
-
-button:hover {
-    background-color: #ddd !important;
-}
-
-
-/*
-     color: black !important;
-    border-radius: 4px;
-background: linear-gradient(145deg, #ffffff, #e6e6e6);
-box-shadow:  8px 8px 16px #d9d9d9, 
-             -8px -8px 16px #ffffff;
-*/
-
-/* cookie =================================================================== */
-.cookie-consent-CookieConsent-container-0bbad4c7 {
-    color: white;
-    background-color: #006567 !important;
-}
-
-/* suchleiste =============================================================== */
-input {
-    border-radius: 0.3em !important;
-}
-button[class^="SearchInput-SearchInput-button-"] {
-    left: 0px !important;
-}
-button[class^="button-ButtonShell-button-"] {
-    height: 42px !important;
-    border: 0px !important;
-}
-
-/*badge-BadgeShell-badge-1bcb04fc skins-small-badge-6069b330 skins-notificationCount-badge-89c1180b IconWithBadge-IconWithBadge-notificationS-d646aee6*/
-
-span[class^="badge-BadgeShell-badge"],
-span[class^="IconWithBadge-IconWithBadge-notification"],
-span[class^="skins-notificationCount-badge-"],
-span[class^="skins-small-badge-"]
-{
-    background-color: #006567 !important;
-    border: 1px solid #B0D400 !important;
-}
-/* chat ===================================================================== */
-.message-bubble-message-bubble-bubble-2d9feb37 {
-    background-color: #fff !important;
-}
-.message-bubble-message-bubble-currentUser-44aeb208 {
-    background-color: #006567 !important;
-}
-
-.presentational-chat-footer-footer-ec5d1933 {
-	background-color: white !important;
-box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
-}
-
-
-
-.presentational-chat-list-item-header-5d583be2 {
-    background-color: #006567 !important;
-    padding: 0.2em;
-    padding-left: 1em;
-    padding-right: 1em;
-    border-radius: 0.2em;
-    margin-bottom: 1em;
-}
-.presentational-chat-list-item-datetime-87eacb65 {
-    color: white !important;
-}
-
-.presentational-chat-footer-composer-7a7aaaed {
-    border-radius: 0.3em;
-    border: 1px solid silver;
-}
-
-.presentational-chat-content-emojiPicker-4361228d {
-    background-color: white !important;
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
-}
-
-/* events */
-.benefits-box-plus {
-    background-color: rgba(255,255,255,0.9) !important;
-    border-radius:0.3em
-}
-.benefit-header  {
-    background-color:  #006567  !important;
-    border-radius:0.3em
-}
-
