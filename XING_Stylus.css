@@ -1,68 +1,3 @@
-@-moz-document domain("xing.com") {
-/* V0.2:
-Zur einfachen Anpassung:
-- auf CSS-Variablen umgestellt
-- für Stylus die CSS in die Bereiche:
-  - Variablen
-  - Stile
-  - Print
-  aufgeteilt
-
-*/
-
-:root {
-    --reset-bg: transparent; /* reset für alles */
-    
-    --border-radius: 0.3em
-    
-
-    /* header */
-    --header-bg:  #18242B ;
-    --header-text: #fff;
-    
-    /* alles andere */
-    --text-color: #777;
-    --bg-color: #F4F5F5;
-        
-    --card-color: white;
-    --border-color: rgba(0, 0, 0, 0.1);
-    
-    --nav-hover-bg: #B0D400;       
-    --nav-hober-text: #006567;
-    
-    /* badges */
-    --badge-bg: #006567;
-    --badge-border: #B0D400;
-    
-    /* messages */
-        /* list header */
-        --message-list-header: #006567;
-    
-        /* eigene Nachricht */
-        --message-send-color: #006567;
-        /* empfangene Nachricht */
-        --message-rcv-color: #fff;  
-
-        /* footer */
-        --message-footer-bg: #fff;
-    
-    
-    /* formulare */
-    --input-color: rgba(255, 255, 255, 0.9);
-    --input-radius:  0.3em;
-    
-    --button-border: rgba(0, 0, 0, 0.2);;
-    --button-radius: 0.3em;
-    --button-bg: #eee;
-    --button-hover-bg: #ddd;
-    
-    /* basic, premium usw. */
-    --flag-text: #000;
-    --flag-color: linear-gradient(-45deg, #fceabb 0%,#fccd4d 44%,#f8b500 51%,#fbdf93 100%)
-}
-}
-
-@-moz-document domain("xing.com") {
 /* zu viele Bereiche sind einzeln eingefärbt, deshalb alle auf transparent setzen */
 * {
     background-color: var(--reset-bg) !important;
@@ -112,7 +47,7 @@ input {
 
 header {
     color: var(--header-text) !important;
-    background-color: var(--header-bg) !important;
+    background-color: #18242B !important;
     font-family: sans-serif !important;
 }
 
@@ -124,6 +59,22 @@ div[class^="Startpage-Startpage-topBlock-"] {
     border-color: transparent !important;
 }
 
+
+/* kontaktanfregen */
+.malt-grid-index-col-487cf784 {
+    margin: 0px;
+}
+.malt-grid-index-grid-cd8a955e {
+    padding: 0px;
+}
+li.ListItem-ListItem-listItem-0d443f40 {
+    margin-bottom: 1em;
+}
+
+
+section[id^="contacts_contact_confirm"],
+.hovercard positioning-above-left,
+li.ListItem-ListItem-listItem-0d443f40,
 .malt-grid-index-c-12-5b9e8c8c > div:nth-child(2),
 div.Tile-Tile-tile-5fa1157e,
 .component-layout-card,
@@ -193,20 +144,25 @@ flag-premium-flag-0ab5780a
 }
 
 
-/* buttons  ============================================================= */
-button {
+/* buttons  reset =====================================++==================== */
+button,
+.button-ButtonShell-button-fd31136a {
     border: 1px solid var(--button-border) !important;
     border-radius: var(--button-radius) !important;
     background-color: var(--button-bg) !important;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s 
    
 }
-
 button:hover {
     background-color: var(--button-hover-bg) !important;
 }
 
 
+
+/* chart Profilbesucher */
+.Line-Line-line-83a2d26b {
+    stroke: var(--line-color);
+}
 
 /* premium */
 .displayFlag-displayFlag-clickableBadge-f36380a7,
@@ -294,44 +250,3 @@ span[class^="skins-small-badge-"]
     border-radius: var(--border-radius)
 }
 
-
-}
-
-@-moz-document domain("xing.com") {
-@media print {
-
-    * {
-    color: #000 !important;
-    background-color: #fff !important;
-    }
-    
-    nav,
-    .XingView-XingView-sidebar-ad222b3a,
-    .ImproveVisibility-ImproveVisibility-wrapper-e1018fde,
-    .flyout-button-flyout-button-body-44744b4a, 
-    .flyout-button-flyout-button-wrapper-8885493f {
-    visibility: hidden;
-    background-color: transparent !important;
-    }   
-    
-/* Besuscher Statistik */
-    div.show-more-ShowMore-collapsable-6502bf5c:nth-child(2) > div:nth-child(5) > div:nth-child(1),
-    .styles-grid-col-2554aa7b,
-    .styles-grid-c-12-59417792,
-    .Header-Header-heading-9de5a6a4
-    {
-       page-break-before: always; 
-    }       
-    .styles-container-gridContainer-1a6b8974,
-    .styles-container-standardGridContainer-09281107 {
-        width: 100%;
-        max-width: 100%;
-        margin: 0px;
-        padding: 0px;
-    }  
-    .chart {
-        width:100% !important;
-    }
-    
-}
-}
