@@ -1,73 +1,73 @@
 @-moz-document domain("xing.com") {
-
 :root {
-    --reset-bg: transparent; /* reset für alles */
+    --reset-bg: transparent;
+    --reset-txt: #444;
     
-    --border-radius: 0.3em
-    
-
-    /* header */
-    --header-bg:  #18242B ;
+    /* reset für alles */
+    --border-radius: 0.3em/* header */
+    --header-bg: #18242B;
     --header-text: #fff;
-    
+
     /* alles andere */
     --text-color: #777;
     --bg-color: #F4F5F5;
-        
+
     --card-color: white;
     --border-color: rgba(0, 0, 0, 0.05);
-    
-    --nav-hover-bg: #B0D400;       
+
+    --nav-hover-bg: #B0D400;
     --nav-hober-text: #006567;
-    
+
     /* mitteilungen */
-    --event-contact: rgba(255, 0, 0, 0.5);
+    --event-contact: rgba(100, 255, 0, 0.3);
+    --event-contact-req: rgba(255, 0, 0, 0.5);
     --event-invitation: rgba(0, 128, 255, 0.5);
     --event-comment: rgba(255, 128, 0, 0.5);
     --event-like: rgba(0, 255, 128, 0.5);
     --event-visit: rgba(0, 0, 0, 0.5);
-    
+
     /* badges */
     --badge-bg: #006567;
     --badge-border: #B0D400;
-    
+
     /* besuchertrend */
     --line-color: #006567;
-    
-    /* messages */
-        /* list header */
-        --message-list-header: #006567;
-    
-        /* eigene Nachricht */
-        --message-send-color: #006567;
-        /* empfangene Nachricht */
-        --message-rcv-color: #fff;  
 
-        /* footer */
-        --message-footer-bg: #fff;
-    
-    
+    /* messages */
+    /* list header */
+    --message-list-header: #006567;
+    --message-quick: rgba(255,200, 0, 0.4);
+
+    /* eigene Nachricht */
+    --message-send-color: #006567;
+    /* empfangene Nachricht */
+    --message-rcv-color: #fff;
+
+    /* footer */
+    --message-footer-bg: #fff;
+
+
     /* formulare */
     --input-color: rgba(255, 255, 255, 0.9);
-    --input-radius:  0.3em;
-    
-    --button-border: rgba(0, 0, 0, 0.2);;
+    --input-radius: 0.3em;
+
+    --button-border: rgba(0, 0, 0, 0.2);
+    ;
     --button-radius: 0.3em;
     --button-bg: #eee;
     --button-hover-bg: #ddd;
-    
+
     /* basic, premium usw. */
     --flag-text: #000;
-    --flag-color: linear-gradient(-45deg, #fceabb 0%,#fccd4d 44%,#f8b500 51%,#fbdf93 100%)
+    --flag-color: linear-gradient(-45deg, #fceabb 0%, #fccd4d 44%, #f8b500 51%, #fbdf93 100%)
 }
-
-
 }
 
 @-moz-document domain("xing.com") {
 /* zu viele Bereiche sind einzeln eingefärbt, deshalb alle auf transparent setzen */
 * {
     background-color: var(--reset-bg) !important;
+    color: var(--reset-txt) !important;
 }
 
 
@@ -78,7 +78,7 @@ footer,
 div[class^="skins-shell-wrapper-"],
 div[class^="SearchBarXdl-SearchBar-suggestions-"],
 .SettingsDropdownList-SettingsDropdownList-itemList-3dafcb00,
-.src-ModalContent-base-9d0ba1a7{
+.src-ModalContent-base-9d0ba1a7 {
     color: var(--text-color) !important;
     background-color: var(--bg-color) !important;
     font-family: sans-serif !important;
@@ -86,8 +86,8 @@ div[class^="SearchBarXdl-SearchBar-suggestions-"],
 
 /* Etwas höflicher ######################################################################## */
 #people > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1),
-#from_user > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1){
-     visibility: hidden;
+#from_user > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1) {
+    visibility: hidden;
     position: relative;
 }
 #people > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1):after {
@@ -97,8 +97,8 @@ div[class^="SearchBarXdl-SearchBar-suggestions-"],
     left: 0;
     content: "Von Ihren Kontakten";
 }
-#from_user > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1):after  {
-      visibility: visible;
+#from_user > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1):after {
+    visibility: visible;
     position: absolute;
     top: 0;
     left: 0;
@@ -163,13 +163,12 @@ div[class^="recommendation-list-recommendation-list-posting"],
 div[class^="recent-search-recent-search-container"],
 div[class^="main-main-main-"],
 div[class*="SpokeHeader-SpokeHeader-container-"],
-div[class^="src-ModalWindow-base-"]
-{
-    background-color: var(--card-color) !important;  
+div[class^="src-ModalWindow-base-"] {
+    background-color: var(--card-color) !important;
     border-radius: var(--border-radius);
     padding: 1em;
-    border: solid 1px var(--border-color) !important; 
-    box-shadow:  5px 5px 20px rgba(0,0,0,0.1) 
+    border: solid 1px var(--border-color) !important;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1)
 }
 
 /* mitteilungen */
@@ -177,20 +176,25 @@ section[id^="contacts_contact_confirm"],
 section[id^="contacts_new_contact:ct-nc~1~"] {
     border-left: solid 5px var(--event-contact) !important;
 }
+
+section[id^="contacts_contact_request"] {
+    border-left: solid 5px var(--event-contact-req) !important;
+}
+
 section[id^="events_invitation_"] {
-    border-left: solid 5px var(--event-invitation) !important;  
+    border-left: solid 5px var(--event-invitation) !important;
 }
 section[id^="social_comment:soc-cm~1~"],
-section[id^="communities_comment_to_my_post"]{
-    border-left: solid 5px var(--event-comment) !important;  
+section[id^="communities_comment_to_my_post"] {
+    border-left: solid 5px var(--event-comment) !important;
 }
 section[id^="social_like:soc-lk~1~"],
 section[id^="communities_like_to_my_post"],
-section[id^="communities_like_to_my_comment"]  {
-     border-left: solid 5px var(--event-like) !important;
+section[id^="communities_like_to_my_comment"] {
+    border-left: solid 5px var(--event-like) !important;
 }
 section[id^="profiles_vomp_unfenced:vomp~"] {
-     border-left: solid 5px var(--event-visit) !important;
+    border-left: solid 5px var(--event-visit) !important;
 }
 
 div[class^="entryOverview-entryOverview-button-"],
@@ -210,30 +214,39 @@ div[class^="entryOverview-entryOverview-wrapperForS-"] {
     border: 0px;
 }
 
+.VerticalNavigation-VerticalNavigation-nav-e1daaa7b {
+    min-width:7em;
+}
 
 nav[class^="VerticalNavigation-VerticalNavigation-nav-"] {
     margin: 1em !important;
     padding: 1em !important;
 }
 
-a[class^="NavItem-NavItem-link-"] {
+a[class^="NavItem-NavItem-"] {
     border-radius: var(--border-radius);
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    border-left: solid 0.4em transparent !important;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
-a[class^="NavItem-NavItem-link-"]:hover {
+a[class^="NavItem-NavItem-"]:hover {
     color: var(--nav-hober-text);
-    background-color: var(--nav-hover-bg) !important;
-    border-radius:var(--border-radius);
+    border-left: solid 0.4em var(--nav-hover-bg) !important;
+    border-radius: var(--border-radius);
 }
-flag-premium-flag-0ab5780a
 
-.klartext-archive__item {
+/* icon shadow */
+.IconWithBadge-IconWithBadge-iconWrapper-bf29972a {
+      filter:drop-shadow(2px 2px 4px rgba(0,0,0,0.5) );
+}
+
+
+flag-premium-flag-0ab5780a .klartext-archive__item {
     margin: 1em;
 }
 
 /* Nachricht schreiben - iframe ============================================= */
 .flyout-button-flyout-button-body-44744b4a {
-    background-color: rgba(0,0,0,0) !important;
+    background-color: rgba(0, 0, 0, 0) !important;
 }
 
 
@@ -243,8 +256,7 @@ button,
     border: 1px solid var(--button-border) !important;
     border-radius: var(--button-radius) !important;
     background-color: var(--button-bg) !important;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s 
-   
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s
 }
 button:hover {
     background-color: var(--button-hover-bg) !important;
@@ -257,16 +269,17 @@ button:hover {
     stroke: var(--line-color);
 }
 
-/* premium */
+/* premium usw. */
+a.VerticalNavigation-VerticalNavigation-me-11e6c4b7:nth-child(1) > figure:nth-child(1) > figcaption:nth-child(2) > span:nth-child(2),
 .displayFlag-displayFlag-clickableBadge-f36380a7,
 .PremiumPopOver-PremiumPopOver-wrapper-b2b9c835 > button:nth-child(1) {
-    background: var(--flag-color); 
+    background: var(--flag-color);
 }
 
 .flag-FlagShell-text-a676758e,
 .typography-TextShell-text-a647b5ac,
 .PremiumPopOver-PremiumPopOver-wrapper-b2b9c835 > button:nth-child(1) {
-     color: var(--flag-text) !important;
+    color: var(--flag-text) !important;
 }
 
 /* cookie =================================================================== */
@@ -291,10 +304,10 @@ button[class^="button-ButtonShell-button-"] {
 span[class^="badge-BadgeShell-badge"],
 span[class^="IconWithBadge-IconWithBadge-notification"],
 span[class^="skins-notificationCount-badge-"],
-span[class^="skins-small-badge-"]
-{
+span[class^="skins-small-badge-"] {
     background-color: var(--badge-bg) !important;
     border: 1px solid var(--badge-border) !important;
+    color: white !important;
 }
 /* chat ===================================================================== */
 .message-bubble-message-bubble-bubble-2d9feb37 {
@@ -305,20 +318,42 @@ span[class^="skins-small-badge-"]
 }
 
 .presentational-chat-footer-footer-ec5d1933 {
-	background-color: var(--message-footer-bg) !important;
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    background-color: var(--message-footer-bg) !important;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
-
 
 
 .presentational-chat-list-item-header-5d583be2 {
     background-color: var(--message-list-header) !important;
-    padding: 0.2em;
+    padding-top: 0.3em;
     padding-left: 1em;
     padding-right: 1em;
     border-radius: 0.2em;
     margin-bottom: 1em;
+    color: white !important;
 }
+.presentational-quick-actions-actionButton-6c090f39 {
+    background-color:var(--message-quick) !important;
+}
+
+/* smiley list 
+.presentational-chat-content-emojiPicker-4361228d,
+.emoji-picker-emoji-picker-container-284eef8e {
+       height: 300px !important;
+}
+.emoji-picker-emoji-picker-container-284eef8e  {
+     transition: height 0.4s !important;   das läßt sich nicht überschreiben ... js?
+} */
+
+
+
+/*  presentational-chat-content-show-7d8b4ac2 */
+
+.presentational-chat-header-text-f4f26d98,
+.presentational-chat-header-pointer-3da835ce,
+.presentational-chat-header-link-2965171f,
+.panel-header-panel-header-heading-f530baa3,
+.presentational-chat-list-item-headline-052bca22,
 .presentational-chat-list-item-datetime-87eacb65 {
     color: white !important;
 }
@@ -330,57 +365,53 @@ span[class^="skins-small-badge-"]
 
 .presentational-chat-content-emojiPicker-4361228d {
     background-color: white !important;
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* events */
 .benefits-box-plus {
-    background-color: rgba(255,255,255,0.9) !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
     border-radius: var(--border-radius)
 }
-.benefit-header  {
-    background-color:  #006567  !important;
+.benefit-header {
+    background-color: #006567 !important;
     border-radius: var(--border-radius)
 }
-
-
 }
 
 @-moz-document domain("xing.com") {
 @media print {
 
     * {
-    color: #000 !important;
-    background-color: #fff !important;
+        color: #000 !important;
+        background-color: #fff !important;
     }
-    
+
     nav,
     .XingView-XingView-sidebar-ad222b3a,
     .ImproveVisibility-ImproveVisibility-wrapper-e1018fde,
-    .flyout-button-flyout-button-body-44744b4a, 
+    .flyout-button-flyout-button-body-44744b4a,
     .flyout-button-flyout-button-wrapper-8885493f {
-    visibility: hidden;
-    background-color: transparent !important;
-    }   
-    
-/* Besuscher Statistik */
+        visibility: hidden;
+        background-color: transparent !important;
+    }
+
+    /* Besuscher Statistik */
     div.show-more-ShowMore-collapsable-6502bf5c:nth-child(2) > div:nth-child(5) > div:nth-child(1),
     .styles-grid-col-2554aa7b,
     .styles-grid-c-12-59417792,
-    .Header-Header-heading-9de5a6a4
-    {
-       page-break-before: always; 
-    }       
+    .Header-Header-heading-9de5a6a4 {
+        page-break-before: always;
+    }
     .styles-container-gridContainer-1a6b8974,
     .styles-container-standardGridContainer-09281107 {
         width: 100%;
         max-width: 100%;
         margin: 0px;
         padding: 0px;
-    }  
-    .chart {
-        width:100% !important;
     }
-    
+    .chart {
+        width: 100% !important;
+    }
 }
 }
