@@ -24,7 +24,7 @@
     --event-invitation: rgba(0, 128, 255, 0.5);
     --event-comment: rgba(255, 128, 0, 0.5);
     --event-like: rgba(0, 255, 128, 0.5);
-    --event-visit: rgba(0, 0, 0, 0.5);
+    --event-visit: rgba(0, 0, 0, 0.2);
 
     /* badges */
     --badge-bg: #006567;
@@ -237,6 +237,22 @@ a[class^="NavItem-NavItem-"]:hover {
       filter:drop-shadow(2px 2px 4px rgba(0,0,0,0.5) );
 }
 
+/* was gibt es neues */
+.ComBox-ComBox-comBox-3263492b {
+    padding: 1em 0 0 0 !important;
+    margin-bottom: 2em !important;
+}
+.card-CardShell-card-29a61377 {
+    padding: 0.5em !important;
+}
+.EntryPoint-styles-entryPoint-728a75a5 {
+    padding: 0.5em !important;
+}
+.styles-grid-m-8-0d1d5bdf {
+    Width:100%;
+}
+
+
 
 flag-premium-flag-0ab5780a .klartext-archive__item {
     margin: 1em;
@@ -258,6 +274,11 @@ button,
 }
 button:hover {
     background-color: var(--button-hover-bg) !important;
+}
+
+.skins-filled-selected-cb34f767 {
+    color: white !important;
+    background-color: #006567 !important;
 }
 
 
@@ -374,6 +395,24 @@ span[class^="skins-small-badge-"] {
 .benefit-header {
     background-color: #006567 !important;
     border-radius: var(--border-radius)
+}
+
+
+/* sonstige buttons */
+#people  button:nth-child(1),
+
+.CommentCounter-CommentCounter-button-81e28d8a,
+#people  button:nth-child(5),
+#people .button-ButtonShell-buttonIcon-9dcb1d08,
+.skins-iconOnly-button-be4e30c5 {
+    border: 0px !important;
+    background-color: transparent !important;
+    height: 2.4em !important;
+    padding: 0.5em !important;
+    min-width: 3em !important;
+}
+#people button:nth-child(1) > div:nth-child(1) > span:nth-child(1) > div:nth-child(1) > svg:nth-child(1){
+    color: #006567 !important
 }
 }
 
