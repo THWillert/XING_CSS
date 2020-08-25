@@ -19,7 +19,7 @@
     --nav-hober-text: #006567;
 
     /* mitteilungen */
-    --event-contact: rgba(100, 255, 0, 0.3);
+    --event-contact: #006567;
     --event-contact-req: rgba(255, 0, 0, 0.5);
     --event-invitation: rgba(0, 128, 255, 0.5);
     --event-comment: rgba(255, 128, 0, 0.5);
@@ -67,9 +67,7 @@
 /* zu viele Bereiche sind einzeln eingefärbt, deshalb alle auf transparent setzen */
 * {
     background-color: var(--reset-bg) !important;
-    color: var(--reset-txt) !important;
 }
-
 
 body,
 main,
@@ -111,12 +109,12 @@ input {
     background-color: var(--input-color) !important;
 }
 
-
 header {
     color: var(--header-text) !important;
     background-color: #18242B !important;
     font-family: sans-serif !important;
 }
+
 
 div.styles-grid-row-d520b127:nth-child(1) {
     border: 0px !important;
