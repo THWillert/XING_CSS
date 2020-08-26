@@ -183,11 +183,32 @@ div[class^="src-ModalWindow-base-"] {
     background-color: var(--card-color) !important;
     border-radius: var(--border-radius);
     padding: 1em;
+
     border: solid 1px var(--border-color) !important;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1)
 }
 
-/* mitteilungen */
+/* von deinen kontakten ################################################ */
+div[class*="WidgetGroup-WidgetGroup-group-"],
+#people article p:nth-child(1)
+{
+    hyphens: auto;
+    font-size: 0.95em !important;
+    max-height: 14em !important;
+}
+
+/* statistik Suchergebnisse - funktioniert auch im "Original" nicht */
+.Footer-Footer-wrapper-fc73589a {
+    font-size: 0.95em 
+}
+
+/* button: Alle Suchstatistiken ... */
+.List-List-button-5bca800e{
+    font-size: 0.95em 
+}
+
+
+/* mitteilungen ######################################################## */
 section[id^="contacts_contact_confirm"],
 section[id^="contacts_new_contact:ct-nc~1~"] {
     border-left: solid 5px var(--event-contact) !important;
