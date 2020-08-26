@@ -1,4 +1,22 @@
 @-moz-document domain("xing.com") {
+/* Achtung!
+Für Mithelfer - es gibt viele Eigenarten im Quellext auf der XING-Seite:
+
+- nicht jedes sichtbare Element, auf verschiedenen Seiten, hat die gleichen CLASSen
+- viele Links sind in Buttons eingebaut
+- einige große Elemente, wie z.B. in Stationen der Berufserfahrung sind ebenfalls Buttons
+- einige Links funktionieren nur über Script
+- die Klassen auf den einzelnen Seiten sind oft vollkommen verschieden
+- die Klassen sind so vielfältig und unübersichtlich. Deren Verwendung ähnelt style="..."
+- Inhalt und Layout Trennung ist nicht wirklich gebeben.
+- Die meisten Größenangaben sind px oder Berechnet.
+- Buttons mit Bildern sind meist eine Kombination aus mehreren DIVs / SVG und Link!
+- Die meisten SVGs sind Inline!
+- Die Fotos aller Personen sind in eine SVG eingebaut. Der Rand (ähnelt einem frühen Röhrenfernseher)
+ist leider durch diese SVG vorgegeben.
+*/
+
+
 :root {
     --reset-bg: transparent;
     --reset-txt: #444;
@@ -264,16 +282,34 @@ flag-premium-flag-0ab5780a .klartext-archive__item {
 }
 
 
-/* buttons  reset =====================================++==================== */
+/* buttons  reset =====================================++==================== 
+alles transparent und nur einzelne einfärben ist weniger aufwand, wie umgekehrt
+*/
 button,
 .button-ButtonShell-button-fd31136a {
-    border: 1px solid var(--button-border) !important;
+    border: transparent !important;
     border-radius: var(--button-radius) !important;
-    background-color: var(--button-bg) !important;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s
+    background-color: transparent !important;
+    
 }
 button:hover {
+    color: black !important;
     background-color: var(--button-hover-bg) !important;
+}
+
+button[class*="main-search-button"],
+button[class*="SettingsDropdown-SettingsDropdown-button"],
+button[class*="SearchInput-SearchInput-button"],
+button[class*="NotificationCenter-NotificationCenter-button-"],
+button[class*="NotificationCenterXdl-NotificationCenter-button-"],
+button[class*="SettingsDropdownXdl-SettingsDropdown-button-"],
+div[class*="header-settings--notification"],
+div[class*="header-settings header-settings--menu"]
+ {
+    background-color: var(--button-bg) !important;
+    border: 1px solid var(--button-border) !important;
+    border-radius: var(--button-radius) !important;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s
 }
 
 .skins-filled-selected-cb34f767 {
@@ -399,18 +435,15 @@ span[class^="skins-small-badge-"] {
 
 
 /* sonstige buttons */
-#people  button:nth-child(1),
-
 .CommentCounter-CommentCounter-button-81e28d8a,
-#people  button:nth-child(5),
-#people .button-ButtonShell-buttonIcon-9dcb1d08,
-.skins-iconOnly-button-be4e30c5 {
+#people article:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > a:nth-child(1),
+button.skins-small-button-864e5244:nth-child(3) 
+{
     border: 0px !important;
     background-color: transparent !important;
-    height: 2.4em !important;
-    padding: 0.5em !important;
-    min-width: 3em !important;
+    height: 3em !important;
 }
+#news button:nth-child(1) > div:nth-child(1) > span:nth-child(1) > div:nth-child(1) > svg:nth-child(1),
 #people button:nth-child(1) > div:nth-child(1) > span:nth-child(1) > div:nth-child(1) > svg:nth-child(1){
     color: #006567 !important
 }
