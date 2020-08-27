@@ -41,8 +41,9 @@ ist leider durch diese SVG vorgegeben.
     --event-contact-req: rgba(255, 0, 0, 0.5);
     --event-invitation: rgba(0, 128, 255, 0.5);
     --event-comment: rgba(255, 128, 0, 0.5);
-    --event-like: rgba(0, 255, 128, 0.5);
-    --event-visit: rgba(0, 0, 0, 0.2);
+    --event-like: rgba(0, 200, 128, 0.5);
+    --event-visit: rgba(0, 0, 0, 0.15);
+    --event-birth: #fccd4d ;
 
     /* badges */
     --badge-bg: #006567;
@@ -73,11 +74,48 @@ ist leider durch diese SVG vorgegeben.
     ;
     --button-radius: 0.3em;
     --button-bg: #eee;
-    --button-hover-bg: #ddd;
+    --button-hover-bg: rgba(0,0,0,0.05);
 
     /* basic, premium usw. */
     --flag-text: #000;
     --flag-color: linear-gradient(-45deg, #fceabb 0%, #fccd4d 44%, #f8b500 51%, #fbdf93 100%)
+}
+}
+
+@-moz-document domain("xing.com") {
+@media print {
+
+    * {
+        color: #000 !important;
+        background-color: #fff !important;
+    }
+
+    nav,
+    .XingView-XingView-sidebar-ad222b3a,
+    .ImproveVisibility-ImproveVisibility-wrapper-e1018fde,
+    .flyout-button-flyout-button-body-44744b4a,
+    .flyout-button-flyout-button-wrapper-8885493f {
+        visibility: hidden;
+        background-color: transparent !important;
+    }
+
+    /* Besuscher Statistik */
+    div.show-more-ShowMore-collapsable-6502bf5c:nth-child(2) > div:nth-child(5) > div:nth-child(1),
+    .styles-grid-col-2554aa7b,
+    .styles-grid-c-12-59417792,
+    .Header-Header-heading-9de5a6a4 {
+        page-break-before: always;
+    }
+    .styles-container-gridContainer-1a6b8974,
+    .styles-container-standardGridContainer-09281107 {
+        width: 100%;
+        max-width: 100%;
+        margin: 0px;
+        padding: 0px;
+    }
+    .chart {
+        width: 100% !important;
+    }
 }
 }
 
@@ -120,7 +158,7 @@ div[class^="SearchBarXdl-SearchBar-suggestions-"],
     left: 0;
     content: "Ihre Beiträge";
 }
-/* ########################################################################################## */
+/* ========================================================================================== */
 .text,
 input {
 
@@ -154,6 +192,9 @@ li.ListItem-ListItem-listItem-0d443f40 {
     margin-bottom: 1em;
 }
 
+.VompBox-VompBox-vompBox-c01a43fe, /* hoem statistik mdeium */
+div[class*="statistics-Statistics-premiumWrapper-"],
+li [class*="show-more-ShowMore-wrapper-"],
 section[id^="profiles_vomp_unfenced:vomp~"],
 section[id^="contacts_contact_confirm"],
 section[id^="contacts_new_contact:ct-nc~1~"],
@@ -188,10 +229,9 @@ div[class^="src-ModalWindow-base-"] {
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1)
 }
 
-/* von deinen kontakten ################################################ */
+/* von deinen kontakten ================================================================ */
 div[class*="WidgetGroup-WidgetGroup-group-"],
-#people article p:nth-child(1)
-{
+#people article p:nth-child(1) {
     hyphens: auto;
     font-size: 0.95em !important;
     max-height: 14em !important;
@@ -199,16 +239,23 @@ div[class*="WidgetGroup-WidgetGroup-group-"],
 
 /* statistik Suchergebnisse - funktioniert auch im "Original" nicht */
 .Footer-Footer-wrapper-fc73589a {
-    font-size: 0.95em 
+    font-size: 0.95em
 }
 
 /* button: Alle Suchstatistiken ... */
-.List-List-button-5bca800e{
-    font-size: 0.95em 
+.List-List-button-5bca800e {
+    font-size: 0.95em
 }
 
 
-/* mitteilungen ######################################################## */
+/* mitteilungen ================================================================ */
+
+/* geburtstag */
+section[id^="contacts_birthday"] {
+    border-left: solid 5px var(--event-birth) !important;  
+    border-right: solid 5px var(--event-birth) !important;
+}
+
 section[id^="contacts_contact_confirm"],
 section[id^="contacts_new_contact:ct-nc~1~"] {
     border-left: solid 5px var(--event-contact) !important;
@@ -240,7 +287,6 @@ div[class^="entryOverview-entryOverview-button-"],
     border: 0px !important;
 }
 
-
 div[class^="entryOverview-entryOverview-wrapperForS-"] {
     margin-bottom: 1em
 }
@@ -251,8 +297,9 @@ div[class^="entryOverview-entryOverview-wrapperForS-"] {
     border: 0px;
 }
 
+/* navigation ================================================================ */
 .VerticalNavigation-VerticalNavigation-nav-e1daaa7b {
-    min-width:7em;
+    min-width: 7em;
 }
 
 nav[class^="VerticalNavigation-VerticalNavigation-nav-"] {
@@ -272,11 +319,11 @@ a[class^="NavItem-NavItem-"]:hover {
 }
 
 /* icon shadow */
-.IconWithBadge-IconWithBadge-iconWrapper-bf29972a {
-      filter:drop-shadow(2px 2px 4px rgba(0,0,0,0.5) );
+div[class*="IconWithBadge-IconWithBadge-iconWrapper"] {
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
 
-/* was gibt es neues */
+/* was gibt es neues ================================================================ */
 .ComBox-ComBox-comBox-3263492b {
     padding: 1em 0 0 0 !important;
     margin-bottom: 2em !important;
@@ -288,9 +335,8 @@ a[class^="NavItem-NavItem-"]:hover {
     padding: 0.5em !important;
 }
 .styles-grid-m-8-0d1d5bdf {
-    Width:100%;
+    Width: 100%;
 }
-
 
 
 flag-premium-flag-0ab5780a .klartext-archive__item {
@@ -304,14 +350,13 @@ flag-premium-flag-0ab5780a .klartext-archive__item {
 
 
 /* buttons  reset =====================================++==================== 
-alles transparent und nur einzelne einfärben ist weniger aufwand, wie umgekehrt
+Alles transparent setzten und anschließend einzelne einfärben: Das ist weniger Aufwand, wie umgekehrt.
 */
 button,
 .button-ButtonShell-button-fd31136a {
     border: transparent !important;
     border-radius: var(--button-radius) !important;
     background-color: transparent !important;
-    
 }
 button:hover {
     color: black !important;
@@ -325,12 +370,18 @@ button[class*="NotificationCenter-NotificationCenter-button-"],
 button[class*="NotificationCenterXdl-NotificationCenter-button-"],
 button[class*="SettingsDropdownXdl-SettingsDropdown-button-"],
 div[class*="header-settings--notification"],
-div[class*="header-settings header-settings--menu"]
- {
+div[class*="header-settings header-settings--menu"] {
     background-color: var(--button-bg) !important;
     border: 1px solid var(--button-border) !important;
     border-radius: var(--button-radius) !important;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s
+}
+
+a.skins-text-button-81134393:nth-child(2) > div:nth-child(1),
+button.button-ButtonShell-button-fd31136a:nth-child(4) {    
+background: linear-gradient(145deg, #ffffff, #e6e6e6);
+box-shadow:  5px 5px 10px #dbdbdb, 
+             -5px -5px 10px #ffffff;
 }
 
 .skins-filled-selected-cb34f767 {
@@ -357,6 +408,7 @@ a.VerticalNavigation-VerticalNavigation-me-11e6c4b7:nth-child(1) > figure:nth-ch
 .PremiumPopOver-PremiumPopOver-wrapper-b2b9c835 > button:nth-child(1) {
     color: var(--flag-text) !important;
 }
+
 
 /* cookie =================================================================== */
 .cookie-consent-CookieConsent-container-0bbad4c7 {
@@ -409,7 +461,7 @@ span[class^="skins-small-badge-"] {
     color: white !important;
 }
 .presentational-quick-actions-actionButton-6c090f39 {
-    background-color:var(--message-quick) !important;
+    background-color: var(--message-quick) !important;
 }
 
 /* smiley list 
@@ -420,11 +472,7 @@ span[class^="skins-small-badge-"] {
 .emoji-picker-emoji-picker-container-284eef8e  {
      transition: height 0.4s !important;   das läßt sich nicht überschreiben ... js?
 } */
-
-
-
 /*  presentational-chat-content-show-7d8b4ac2 */
-
 .presentational-chat-header-text-f4f26d98,
 .presentational-chat-header-pointer-3da835ce,
 .presentational-chat-header-link-2965171f,
@@ -458,51 +506,13 @@ span[class^="skins-small-badge-"] {
 /* sonstige buttons */
 .CommentCounter-CommentCounter-button-81e28d8a,
 #people article:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > a:nth-child(1),
-button.skins-small-button-864e5244:nth-child(3) 
-{
+button.skins-small-button-864e5244:nth-child(3) {
     border: 0px !important;
     background-color: transparent !important;
     height: 3em !important;
 }
 #news button:nth-child(1) > div:nth-child(1) > span:nth-child(1) > div:nth-child(1) > svg:nth-child(1),
-#people button:nth-child(1) > div:nth-child(1) > span:nth-child(1) > div:nth-child(1) > svg:nth-child(1){
+#people button:nth-child(1) > div:nth-child(1) > span:nth-child(1) > div:nth-child(1) > svg:nth-child(1) {
     color: #006567 !important
-}
-}
-
-@-moz-document domain("xing.com") {
-@media print {
-
-    * {
-        color: #000 !important;
-        background-color: #fff !important;
-    }
-
-    nav,
-    .XingView-XingView-sidebar-ad222b3a,
-    .ImproveVisibility-ImproveVisibility-wrapper-e1018fde,
-    .flyout-button-flyout-button-body-44744b4a,
-    .flyout-button-flyout-button-wrapper-8885493f {
-        visibility: hidden;
-        background-color: transparent !important;
-    }
-
-    /* Besuscher Statistik */
-    div.show-more-ShowMore-collapsable-6502bf5c:nth-child(2) > div:nth-child(5) > div:nth-child(1),
-    .styles-grid-col-2554aa7b,
-    .styles-grid-c-12-59417792,
-    .Header-Header-heading-9de5a6a4 {
-        page-break-before: always;
-    }
-    .styles-container-gridContainer-1a6b8974,
-    .styles-container-standardGridContainer-09281107 {
-        width: 100%;
-        max-width: 100%;
-        margin: 0px;
-        padding: 0px;
-    }
-    .chart {
-        width: 100% !important;
-    }
 }
 }
