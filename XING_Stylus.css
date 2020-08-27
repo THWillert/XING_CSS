@@ -377,12 +377,14 @@ div[class*="header-settings header-settings--menu"] {
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s
 }
 
+/* buttons neumorphism-style
 a.skins-text-button-81134393:nth-child(2) > div:nth-child(1),
 button.button-ButtonShell-button-fd31136a:nth-child(4) {    
 background: linear-gradient(145deg, #ffffff, #e6e6e6);
 box-shadow:  5px 5px 10px #dbdbdb, 
              -5px -5px 10px #ffffff;
 }
+   */
 
 .skins-filled-selected-cb34f767 {
     color: white !important;
