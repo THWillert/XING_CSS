@@ -192,7 +192,7 @@ li.ListItem-ListItem-listItem-0d443f40 {
     margin-bottom: 1em;
 }
 
-.VompBox-VompBox-vompBox-c01a43fe, /* hoem statistik mdeium */
+.VompBox-VompBox-vompBox-c01a43fe, /* home statistik medium */
 div[class*="statistics-Statistics-premiumWrapper-"],
 li [class*="show-more-ShowMore-wrapper-"],
 section[id^="profiles_vomp_unfenced:vomp~"],
@@ -202,6 +202,7 @@ section[id^="events_invitation_user:evt-inv~"],
 section[id^="social_comment:soc-cm~1~"],
 section[id^="social_like:soc-lk~1~"],
 section[id^="communities_like_to_my_post"],
+.sc-1xmil6c-0, /* was gibt es neues */
 .Item-Item-itemContent-2a84b3b7,
 .hovercard positioning-above-left,
 li.ListItem-ListItem-listItem-0d443f40,
@@ -212,6 +213,7 @@ div.Tile-Tile-tile-5fa1157e,
 .comm-navigation-dropdown,
 .dropdown,
 #new-post-form,
+nav[class^="src-SideBar-nav-"],
 nav[class^="VerticalNavigation-VerticalNavigation-nav-"],
 nav[class^="Startpage-Startpage-navBar-"],
 div[class^="Card-Card-card-dd"],
@@ -302,16 +304,19 @@ div[class^="entryOverview-entryOverview-wrapperForS-"] {
     min-width: 7em;
 }
 
+nav[class^="src-SideBar-nav-"],
 nav[class^="VerticalNavigation-VerticalNavigation-nav-"] {
     margin: 1em !important;
     padding: 1em !important;
 }
 
+a[class^="nav-item-NavItem-"],
 a[class^="NavItem-NavItem-"] {
     border-radius: var(--border-radius);
     border-left: solid 0.4em transparent !important;
     transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
+a[class^="nav-item-NavItem-"]:hover,
 a[class^="NavItem-NavItem-"]:hover {
     color: var(--nav-hober-text);
     border-left: solid 0.4em var(--nav-hover-bg) !important;
@@ -319,21 +324,24 @@ a[class^="NavItem-NavItem-"]:hover {
 }
 
 /* icon shadow */
-div[class*="IconWithBadge-IconWithBadge-iconWrapper"] {
+div[class^="src-IconWithBadge-iconWrapper-"],
+div[class*="IconWithBadge-IconWithBadge"] {
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 /* was gibt es neues ================================================================ */
-.ComBox-ComBox-comBox-3263492b {
+div[class^="ComBox-ComBox-comBox-"] {
     padding: 1em 0 0 0 !important;
     margin-bottom: 2em !important;
 }
 .card-CardShell-card-29a61377 {
     padding: 0.5em !important;
 }
-.EntryPoint-styles-entryPoint-728a75a5 {
+
+div[class^="EntryPoint-styles-entryPoint-"] {
     padding: 0.5em !important;
 }
+.styles-grid-confined8-8577cb7f,
 .styles-grid-m-8-0d1d5bdf {
     Width: 100%;
 }
@@ -377,14 +385,12 @@ div[class*="header-settings header-settings--menu"] {
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s
 }
 
-/* buttons neumorphism-style
 a.skins-text-button-81134393:nth-child(2) > div:nth-child(1),
 button.button-ButtonShell-button-fd31136a:nth-child(4) {    
 background: linear-gradient(145deg, #ffffff, #e6e6e6);
 box-shadow:  5px 5px 10px #dbdbdb, 
              -5px -5px 10px #ffffff;
 }
-   */
 
 .skins-filled-selected-cb34f767 {
     color: white !important;
@@ -401,6 +407,7 @@ box-shadow:  5px 5px 10px #dbdbdb,
 /* premium usw. */
 a.VerticalNavigation-VerticalNavigation-me-11e6c4b7:nth-child(1) > figure:nth-child(1) > figcaption:nth-child(2) > span:nth-child(2),
 .displayFlag-displayFlag-clickableBadge-f36380a7,
+a.src-SideBar-me-ff255d28:nth-child(1) > figure:nth-child(1) > figcaption:nth-child(2) > span:nth-child(2), /* neben Profilbild */
 .PremiumPopOver-PremiumPopOver-wrapper-b2b9c835 > button:nth-child(1) {
     background: var(--flag-color);
 }
@@ -430,14 +437,15 @@ button[class^="button-ButtonShell-button-"] {
     border: 0px !important;
 }
 
-
+span[class*="profile-image-badge-position-"],
 span[class^="badge-BadgeShell-badge"],
-span[class^="IconWithBadge-IconWithBadge-notification"],
+span[class*="IconWithBadge-notification"],
 span[class^="skins-notificationCount-badge-"],
 span[class^="skins-small-badge-"] {
     background-color: var(--badge-bg) !important;
-    border: 1px solid var(--badge-border) !important;
+    border: 2px solid var(--badge-border) !important;
     color: white !important;
+    font-weight: bold !important;
 }
 /* chat ===================================================================== */
 .message-bubble-message-bubble-bubble-2d9feb37 {
