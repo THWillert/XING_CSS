@@ -1,125 +1,3 @@
-@-moz-document domain("xing.com") {
-/* Achtung!
-Für Mithelfer - es gibt viele Eigenarten im Quellext auf der XING-Seite:
-
-- nicht jedes sichtbare Element, auf verschiedenen Seiten, hat die gleichen CLASSen
-- viele Links sind in Buttons eingebaut
-- einige große Elemente, wie z.B. in Stationen der Berufserfahrung sind ebenfalls Buttons
-- einige Links funktionieren nur über Script
-- die Klassen auf den einzelnen Seiten sind oft vollkommen verschieden
-- die Klassen sind so vielfältig und unübersichtlich. Deren Verwendung ähnelt style="..."
-- Inhalt und Layout Trennung ist nicht wirklich gebeben.
-- Die meisten Größenangaben sind px oder Berechnet.
-- Buttons mit Bildern sind meist eine Kombination aus mehreren DIVs / SVG und Link!
-- Die meisten SVGs sind Inline!
-- Die Fotos aller Personen sind in eine SVG eingebaut. Der Rand (ähnelt einem frühen Röhrenfernseher)
-ist leider durch diese SVG vorgegeben.
-*/
-
-
-:root {
-    --reset-bg: transparent;
-    --reset-txt: #444;
-    
-    /* reset für alles */
-    --border-radius: 0.3em/* header */
-    --header-bg: #18242B;
-    --header-text: #fff;
-
-    /* alles andere */
-    --text-color: #777;
-    --bg-color: #F4F5F5;
-
-    --card-color: white;
-    --border-color: rgba(0, 0, 0, 0.05);
-
-    --nav-hover-bg: #B0D400;
-    --nav-hober-text: #006567;
-
-    /* mitteilungen */
-    --event-contact: #006567;
-    --event-contact-req: rgba(255, 0, 0, 0.5);
-    --event-invitation: rgba(0, 128, 255, 0.5);
-    --event-comment: rgba(255, 128, 0, 0.5);
-    --event-like: rgba(0, 200, 128, 0.5);
-    --event-visit: rgba(0, 0, 0, 0.15);
-    --event-birth: #fccd4d ;
-
-    /* badges */
-    --badge-bg: #006567;
-    --badge-border:  #B0D400;
-
-    /* besuchertrend */
-    --line-color: #006567;
-
-    /* messages */
-    /* list header */
-    --message-list-header: #006567;
-    --message-quick: rgba(255,200, 0, 0.4);
-
-    /* eigene Nachricht */
-    --message-send-color: #006567;
-    /* empfangene Nachricht */
-    --message-rcv-color: #fff;
-
-    /* footer */
-    --message-footer-bg: #fff;
-
-
-    /* formulare */
-    --input-color: rgba(255, 255, 255, 0.9);
-    --input-radius: 0.3em;
-
-    --button-border: rgba(0, 0, 0, 0.2);
-    ;
-    --button-radius: 0.3em;
-    --button-bg: #eee;
-    --button-hover-bg: rgba(0,0,0,0.05);
-
-    /* basic, premium usw. */
-    --flag-text: #000;
-    --flag-color: linear-gradient(-45deg, #fceabb 0%, #fccd4d 44%, #f8b500 51%, #fbdf93 100%)
-}
-}
-
-@-moz-document domain("xing.com") {
-@media print {
-
-    * {
-        color: #000 !important;
-        background-color: #fff !important;
-    }
-
-    nav,
-    .XingView-XingView-sidebar-ad222b3a,
-    .ImproveVisibility-ImproveVisibility-wrapper-e1018fde,
-    .flyout-button-flyout-button-body-44744b4a,
-    .flyout-button-flyout-button-wrapper-8885493f {
-        visibility: hidden;
-        background-color: transparent !important;
-    }
-
-    /* Besuscher Statistik */
-    div.show-more-ShowMore-collapsable-6502bf5c:nth-child(2) > div:nth-child(5) > div:nth-child(1),
-    .styles-grid-col-2554aa7b,
-    .styles-grid-c-12-59417792,
-    .Header-Header-heading-9de5a6a4 {
-        page-break-before: always;
-    }
-    .styles-container-gridContainer-1a6b8974,
-    .styles-container-standardGridContainer-09281107 {
-        width: 100%;
-        max-width: 100%;
-        margin: 0px;
-        padding: 0px;
-    }
-    .chart {
-        width: 100% !important;
-    }
-}
-}
-
-@-moz-document domain("xing.com") {
 /* zu viele Bereiche sind einzeln eingefärbt, deshalb alle auf transparent setzen */
 * {
     background-color: var(--reset-bg) !important;
@@ -445,11 +323,12 @@ box-shadow:  5px 5px 10px #dbdbdb,
 a.VerticalNavigation-VerticalNavigation-me-11e6c4b7:nth-child(1) > figure:nth-child(1) > figcaption:nth-child(2) > span:nth-child(2),
 .displayFlag-displayFlag-clickableBadge-f36380a7,
 a.src-SideBar-me-ff255d28:nth-child(1) > figure:nth-child(1) > figcaption:nth-child(2) > span:nth-child(2), /* neben Profilbild */
-.PremiumPopOver-PremiumPopOver-wrapper-b2b9c835 > button:nth-child(1) {
+.PremiumPopOver-PremiumPopOver-wrapper-b2b9c835 > button:nth-child(1),
+span[class*="flag-FlagShell-flag-"]{
     background: var(--flag-color);
 }
 
-.flag-FlagShell-text-a676758e,
+span[class*="flag-FlagShell-text"],
 .typography-TextShell-text-a647b5ac,
 .PremiumPopOver-PremiumPopOver-wrapper-b2b9c835 > button:nth-child(1) {
     color: var(--flag-text) !important;
@@ -561,5 +440,4 @@ button.skins-small-button-864e5244:nth-child(3) {
 #news button:nth-child(1) > div:nth-child(1) > span:nth-child(1) > div:nth-child(1) > svg:nth-child(1),
 #people button:nth-child(1) > div:nth-child(1) > span:nth-child(1) > div:nth-child(1) > svg:nth-child(1) {
     color: #006567 !important
-}
 }
