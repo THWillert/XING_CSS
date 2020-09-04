@@ -205,6 +205,7 @@ div.show-more-ShowMore-collapsable-6502bf5c:nth-child(2) > div:nth-child(4) > di
 div.styles-grid-row-a6eaef87:nth-child(6) > div:nth-child(1),
 div.ExpandedStat-ExpandedStat-wrapper-c68c87d7:nth-child(2),
 
+section[class^="contactsView-contacts-contactsList-"] div[class^="profile-info-ProfileInfo-container-"], /* Kontaktliste anderer Kontakt */
 .VompBox-VompBox-vompBox-c01a43fe, /* home statistik medium */
 div[class*="statistics-Statistics-premiumWrapper-"],
 li [class*="show-more-ShowMore-wrapper-"],
@@ -252,6 +253,9 @@ div[class^="src-ModalWindow-base-"] {
     border: solid 2px var(--border-color) !important;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1) 
 }
+
+div[class^="profile-info-ProfileInfo-container-"] /* Kontakte */
+{  margin-top: 1em !important;}
 
 /* von deinen kontakten ================================================================ */
 div[class*="WidgetGroup-WidgetGroup-group-"],
@@ -432,9 +436,9 @@ div[class*="header-settings header-settings--menu"] {
 div[class^="CardFooter-CardFooter-cardFooter"] button, /* kontakt hinzufügen */
 a.skins-text-button-81134393:nth-child(2) > div:nth-child(1),
 button.button-ButtonShell-button-fd31136a:nth-child(4) {    
-background: linear-gradient(145deg, #ffffff, #e6e6e6);
-box-shadow:  5px 5px 10px #dbdbdb, 
-             -5px -5px 10px #ffffff;
+background: linear-gradient(145deg, #ffffff, #e6e6e6) !important;
+box-shadow:  5px 5px 10px #dbdbdb , 
+             -5px -5px 10px #ffffff !important;
 }
 
 
