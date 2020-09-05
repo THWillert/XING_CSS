@@ -15,12 +15,10 @@ Für Mithelfer - es gibt viele Eigenarten im Quellext auf der XING-Seite:
 - Die Fotos aller Personen sind in eine SVG eingebaut. Der Rand (ähnelt einem frühen Röhrenfernseher)
 ist leider durch diese SVG vorgegeben.
 */
-
-
 :root {
     --reset-bg: transparent;
     --reset-txt: #444;
-    
+
     /* reset für alles */
     --border-radius: 0.3em/* header */
     --header-bg: #18242B;
@@ -43,11 +41,11 @@ ist leider durch diese SVG vorgegeben.
     --event-comment: rgba(255, 128, 0, 0.5);
     --event-like: rgba(0, 200, 128, 0.5);
     --event-visit: rgba(0, 0, 0, 0.15);
-    --event-birth: #fccd4d ;
+    --event-birth: #fccd4d;
 
     /* badges */
     --badge-bg: #006567;
-    --badge-border:  #B0D400;
+    --badge-border: #B0D400;
 
     /* besuchertrend */
     --line-color: #006567;
@@ -55,7 +53,7 @@ ist leider durch diese SVG vorgegeben.
     /* messages */
     /* list header */
     --message-list-header: #006567;
-    --message-quick: rgba(255,200, 0, 0.4);
+    --message-quick: rgba(255, 200, 0, 0.4);
 
     /* eigene Nachricht */
     --message-send-color: #006567;
@@ -74,11 +72,15 @@ ist leider durch diese SVG vorgegeben.
     ;
     --button-radius: 0.3em;
     --button-bg: #eee;
-    --button-hover-bg: rgba(0,0,0,0.05);
+    --button-hover-bg: rgba(0, 0, 0, 0.05);
 
     /* basic, premium usw. */
     --flag-text: #000;
-    --flag-color: linear-gradient(-45deg, #fceabb 0%, #fccd4d 44%, #f8b500 51%, #fbdf93 100%)
+    --flag-color: linear-gradient(-45deg, #fceabb 0%, #fccd4d 44%, #f8b500 51%, #fbdf93 100%);
+
+    /* badges */
+    --badge-skills-top: linear-gradient(-45deg, #fceabb 0%, #fccd4d 44%, #f8b500 51%, #fbdf93 100%);
+    --badge-skills: #B0D400;
 }
 }
 
@@ -193,7 +195,8 @@ li.ListItem-ListItem-listItem-0d443f40 {
 }
 
 
-#CareerSettingsModule > div:nth-child(1) > div:nth-child(1) > div:nth-child(1), /* jobwünsche */
+#CareerSettingsModule > div:nth-child(1) > div:nth-child(1) > div:nth-child(1),
+/* jobwünsche */
 #VOMPModule > div:nth-child(1) > div:nth-child(1),
 #ProfileTimelineModule > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2),
 #ProfileTimelineModule > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1),
@@ -205,8 +208,17 @@ div.show-more-ShowMore-collapsable-6502bf5c:nth-child(2) > div:nth-child(4) > di
 div.styles-grid-row-a6eaef87:nth-child(6) > div:nth-child(1),
 div.ExpandedStat-ExpandedStat-wrapper-c68c87d7:nth-child(2),
 
-section[class^="contactsView-contacts-contactsList-"] div[class^="profile-info-ProfileInfo-container-"], /* Kontaktliste anderer Kontakt */
-.VompBox-VompBox-vompBox-c01a43fe, /* home statistik medium */
+
+div[class^="commonalities-styles-background-"],
+/* profil gemeinsamkeiten */
+#ProfileSkillsModule > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1),
+/* fähigkeiten und Kenntnisse */
+div[class^="src-Modal-base-"],
+/* profil ... */
+section[class^="contactsView-contacts-contactsList-"] div[class^="profile-info-ProfileInfo-container-"],
+/* Kontaktliste anderer Kontakt */
+.VompBox-VompBox-vompBox-c01a43fe,
+/* home statistik medium */
 div[class*="statistics-Statistics-premiumWrapper-"],
 li [class*="show-more-ShowMore-wrapper-"],
 section[id^="profiles_vomp_unfenced:vomp~"],
@@ -216,7 +228,8 @@ section[id^="events_invitation_user:evt-inv~"],
 section[id^="social_comment:soc-cm~1~"],
 section[id^="social_like:soc-lk~1~"],
 section[id^="communities_like_to_my_post"],
-.sc-1xmil6c-0, /* was gibt es neues */
+.sc-1xmil6c-0,
+/* was gibt es neues */
 .Item-Item-itemContent-2a84b3b7,
 .hovercard positioning-above-left,
 li.ListItem-ListItem-listItem-0d443f40,
@@ -246,16 +259,23 @@ div[class^="card-CardShell-card"] {
     border: 1px solid transparent !important;
 }
 
+/* profil ... */
+div[class*="malt-select-menu-SelectMenu-modal"] {
+    max-height: 20em !important;
+}
+
 div[class^="src-ModalWindow-base-"] {
     background-color: var(--card-color) !important;
     border-radius: var(--border-radius);
     padding: 1em;
     border: solid 2px var(--border-color) !important;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1) 
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1)
 }
 
-div[class^="profile-info-ProfileInfo-container-"] /* Kontakte */
-{  margin-top: 1em !important;}
+div[class^="profile-info-ProfileInfo-container-"]/* Kontakte */
+{
+    margin-top: 1em !important;
+}
 
 /* von deinen kontakten ================================================================ */
 div[class*="WidgetGroup-WidgetGroup-group-"],
@@ -277,10 +297,9 @@ div[class*="WidgetGroup-WidgetGroup-group-"],
 
 
 /* mitteilungen ================================================================ */
-
 /* geburtstag */
 section[id^="contacts_birthday"] {
-    border-left: solid 5px var(--event-birth) !important;  
+    border-left: solid 5px var(--event-birth) !important;
     border-right: solid 5px var(--event-birth) !important;
 }
 
@@ -372,7 +391,7 @@ div[class^="EntryPoint-styles-entryPoint-"] {
     Width: 100%;
 }
 
-div[class*="Footer-Footer-wrapper-"]{
+div[class*="Footer-Footer-wrapper-"] {
     padding-top: 0.3em;
 }
 
@@ -380,6 +399,7 @@ div[class*="Footer-Footer-wrapper-"]{
 flag-premium-flag-0ab5780a .klartext-archive__item {
     margin: 1em;
 }
+
 
 /* Nachricht schreiben - iframe ============================================= */
 .flyout-button-flyout-button-body-44744b4a {
@@ -406,11 +426,11 @@ button:hover {
 werdegang / stelle ############################################################### */
 button[class^="entryOverview-entryOverview-button-"] {
     background-color: white !important;
-    border: 1px solid rgba(0,0,0,0.2) !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
 }
 
 div[class^="proJobsData-proJobsData-proJobsData-"] {
-    background-color: rgba(0,0,0,0.03) !important;
+    background-color: rgba(0, 0, 0, 0.03) !important;
 }
 
 button[class^="entryOverview-entryOverview-button-"]:hover {
@@ -433,12 +453,13 @@ div[class*="header-settings header-settings--menu"] {
 }
 
 /* buttons */
-div[class^="CardFooter-CardFooter-cardFooter"] button, /* kontakt hinzufügen */
+div[class^="CardFooter-CardFooter-cardFooter"] button,
+/* kontakt hinzufügen */
 a.skins-text-button-81134393:nth-child(2) > div:nth-child(1),
-button.button-ButtonShell-button-fd31136a:nth-child(4) {    
-background: linear-gradient(145deg, #ffffff, #e6e6e6) !important;
-box-shadow:  5px 5px 10px #dbdbdb , 
-             -5px -5px 10px #ffffff !important;
+button.button-ButtonShell-button-fd31136a:nth-child(4) {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6) !important;
+    box-shadow: 5px 5px 10px #dbdbdb,
+    -5px -5px 10px #ffffff !important;
 }
 
 
@@ -456,9 +477,10 @@ box-shadow:  5px 5px 10px #dbdbdb ,
 /* premium usw. */
 a.VerticalNavigation-VerticalNavigation-me-11e6c4b7:nth-child(1) > figure:nth-child(1) > figcaption:nth-child(2) > span:nth-child(2),
 .displayFlag-displayFlag-clickableBadge-f36380a7,
-a.src-SideBar-me-ff255d28:nth-child(1) > figure:nth-child(1) > figcaption:nth-child(2) > span:nth-child(2), /* neben Profilbild */
+a.src-SideBar-me-ff255d28:nth-child(1) > figure:nth-child(1) > figcaption:nth-child(2) > span:nth-child(2),
+/* neben Profilbild */
 .PremiumPopOver-PremiumPopOver-wrapper-b2b9c835 > button:nth-child(1),
-span[class*="flag-FlagShell-flag-"]{
+span[class*="flag-FlagShell-flag-"] {
     background: var(--flag-color);
 }
 
@@ -579,5 +601,17 @@ button.skins-small-button-864e5244:nth-child(3) {
 #news button:nth-child(1) > div:nth-child(1) > span:nth-child(1) > div:nth-child(1) > svg:nth-child(1),
 #people button:nth-child(1) > div:nth-child(1) > span:nth-child(1) > div:nth-child(1) > svg:nth-child(1) {
     color: #006567 !important
+}
+
+
+/* badges =================================================================== */
+/* top fähigkeiten */
+.read-topSkills-tag-be5e8249 {
+    background: var(--badge-skills-top) !important;
+    color: black;
+    font-weight: bold;
+}
+.cv-tag-list li {
+    background: var(--badge-skills) !important;
 }
 }
