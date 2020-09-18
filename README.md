@@ -6,3 +6,5 @@ Eleganter Stil für XING, ladbar über Stylus.
 ---
 
 WIP: Hier fehlt noch einiges. Darum gibt es das Ganze noch nicht auf userstyles.org.
+
+[Homepage](https://www.thorsten-willert.de/software/xing-design)
