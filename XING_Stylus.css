@@ -479,6 +479,12 @@ button.skins-small-button-864e5244:nth-child(3) {
     color: #006567 !important
 }
 
+/* werbung */
+/* projobs */
+div[class^="UpsellButton-UpsellButton-container-"] {
+ display: none !important   
+}
+
 
 /* badges =================================================================== */
 /* top fähigkeiten */
